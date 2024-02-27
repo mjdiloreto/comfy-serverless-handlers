@@ -163,8 +163,8 @@ class BaseHandler:
         for item in outputs:
             print(f"item in output")
             if "images" in outputs[item]:
-                if image['type'] and image['type'] is "output":
-                    for image in outputs[item]["images"]:
+                for image in outputs[item]["images"]:
+                    if image['type'] and image['type'] is "output":
                         original_path = f"{self.OUTPUT_DIR}{image['subfolder']}/{image['filename']}"
                         print(f"original_path is {original_path}")
                         new_path = f"{custom_output_dir}/{image['filename']}"
